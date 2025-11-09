@@ -1,0 +1,24 @@
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6
+            bg-slate-700 p-4 rounded-lg shadow-lg">
+  <mat-form-field appearance="outline" class="w-full sm:w-64">
+    <mat-label class="text-gray-200">Filtrar por matrícula</mat-label>
+    <mat-select
+      [value]="selectedPlate()"
+      (selectionChange)="onSelectPlate($event.value)"
+      class="text-black bg-white"
+    >
+  <mat-option value="">Todas</mat-option>
+  @for (plate of availablePlates(); track plate) {
+    <mat-option [value]="plate">{{ plate }}</mat-option>
+  }
+    </mat-select>
+  </mat-form-field>
+
+  <button
+    type="button"
+    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+    (click)="onClearFilter()"
+  >
+    Limpiar filtro
+  </button>
+</div>

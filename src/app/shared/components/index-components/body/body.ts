@@ -1,0 +1,12 @@
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'body-component',
+  standalone: true,
+  imports: [RouterLink],
+  templateUrl: './body.html',
+  styleUrl: './body.css',
+
+})
+export class Body { }

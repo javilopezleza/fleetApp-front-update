@@ -1,0 +1,32 @@
+<!-- Desktop Navbar Menu -->
+<div class="hidden md:flex">
+  <ul class="flex space-x-8 font-medium">
+    @for(item of menuOptions; track item.route){
+    <li>
+      <a
+        [routerLink]="item.route"
+        routerLinkActive="link-active"
+        class="block py-2 px-3 text-gray-900 hover:text-blue-700 md:p-0 dark:text-white">
+        <i [class]="item.icon"></i>
+        <span>{{item.label}}</span>
+      </a>
+    </li>
+    }
+  </ul>
+</div>
+
+<!-- Mobile Navbar Menu -->
+
+<div
+  class="fixed bottom-0 left-0 w-full bg-white dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700 flex justify-around py-2 md:hidden">
+  @for(item of menuOptions; track item.route){
+  <a
+    [routerLink]="item.route"
+    routerLinkActive="link-active"
+    class="flex flex-col items-center text-gray-600 dark:text-white">
+    <i [class]="item.icon"></i>
+    <span class="text-xs">{{item.label}}</span>
+  </a>
+
+  }
+</div>

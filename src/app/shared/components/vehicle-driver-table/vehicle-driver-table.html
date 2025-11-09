@@ -1,0 +1,18 @@
+<h1 class="ml-3 text-3xl font-bold">Tabla de Relaciones</h1>
+
+@if (loading()) {
+  <spinner />
+}
+@else if (!loading() && (!allDrivers() || allDrivers().length === 0)) {
+  <div class="flex flex-col items-center justify-center py-12 text-center text-gray-500">
+    <h3 class="text-lg font-medium">No hay datos disponibles</h3>
+  </div>
+} @else {
+
+  <search-component (filterChanged)="onFilterChanged($event)" />
+
+  <generic-table
+    [data]="vehicleDriver()"
+    [columns]="columns"
+  />
+}
