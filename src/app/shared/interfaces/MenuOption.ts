@@ -1,5 +1,5 @@
 export interface MenuOption {
   icon?: string;
-  label: string;
+  label?: string;
   route: string;
 }
